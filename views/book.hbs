@@ -1,0 +1,9 @@
+{{#each book}}
+<<div>
+  <p>{{title}}</p>
+  <p>{{genre}}</p>
+  <p>{{discription}}</p>
+</div>
+<a href="book/{{this.id}}"><img src="{{this.cover}}" alt="" class="bookImg"></a>
+
+{{/each}}

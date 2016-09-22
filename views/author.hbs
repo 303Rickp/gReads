@@ -1,0 +1,12 @@
+  {{#each author}}
+  <div>
+    <p>{{first_name}}</p>
+    <p>{{last_name}}</p>
+    <p>{{bio}}</p>
+  </div>
+
+  <a href="author/{{this.id}}">
+    <img src="{{this.portrait}}" alt="" class="authorImg">
+  </a>
+  
+  {{/each}}
