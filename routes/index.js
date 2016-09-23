@@ -1,26 +1,25 @@
 var express = require('express');
 var router = express.Router();
-//onst pg = require('../db/knex_config.js')
 var knex = require('../db/knex');
 var query = require('../db/query')
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('index', { title:'Galvanize Can Read'});
+    res.render('index');
 });
-
+// all author page
 router.get('/author', function(req, res, next){
   query.Author().orderBy('id', 'asc')
-  .then(function(data){
-    res.render('author', { title:'authorStuff', author: data });
+  .then(function(author){
+    res.render('author', {  author: author });
   })
 });
+//all book page
 router.get('/book', function(req, res, next){
   query.Book().orderBy('id', 'asc')
-  //console.log('Book')
-  .then(function(data){
-    res.render('book', {title:'bookStuff', book: data});
+  .then(function(book){
+    res.render('book', {book: book});
   })
 });
 

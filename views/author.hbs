@@ -1,12 +1,19 @@
+<div class ='container'
+<div class="btn-group-vertical">
+    <a href="/author" class="btn btn-default">AUTHORS</a>
+    <a href="/book" class="btn btn-default">BOOKS</a>
+</div>
+
   {{#each author}}
+
   <div>
     <p>{{first_name}}</p>
     <p>{{last_name}}</p>
     <p>{{bio}}</p>
   </div>
-
+</div>
   <a href="author/{{this.id}}">
     <img src="{{this.portrait}}" alt="" class="authorImg">
   </a>
-  
+
   {{/each}}

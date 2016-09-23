@@ -10,10 +10,18 @@ function Index(){
   return knex('index')
 }
 
+function authorByBookId(book_id){
+ return knex('author')
+   .select('author.first_name', 'author.last_name', 'author.id as author_id')
+   .innerJoin('author_book', 'author.id', 'author_book.author_id')
+   .where({'author_book.book_id': book_id});
+}
+
 module.exports = {
   Author,
   Book,
-  Index
+  Index,
+  authorByBookId
 };
   // getAuthorByName: function(name){
   //   return Author().where('name', name)
